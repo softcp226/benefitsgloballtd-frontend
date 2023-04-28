@@ -57,10 +57,12 @@ document.querySelector("#submit").onclick = () => {
   if (!amount.value) return (amount.style.border = "2px solid red");
   amount.style.border = "2px solid #fff";
   const admin = getCookie("admin");
+  const user=getParam()
   const token = getCookie("admin_token");
   const deposit_request = getParam();
   submit_deposit_approval({
     admin: admin,
+    user:user,
     token: token,
     deposit_request,
     deposit_amount: amount.value,
